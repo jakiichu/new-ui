@@ -1,1 +1,1 @@
-<h1 align="center">ссылка на <a href="https://github.com/jakiichu/new-ui" target="_blank">github</a> 
+<!-- <h1 align="center">ссылка на <a href="https://github.com/jakiichu/new-ui" target="_blank">github</a>  -->
