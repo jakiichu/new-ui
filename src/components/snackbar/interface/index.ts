@@ -6,6 +6,8 @@ interface ISnackbarComponentProps {
     message: string;
     EVariantSnackbar: EVariantSnackbar
 
+    closeSnackbar: (key?: SnackbarKey) => void
+
     action(): SnackbarKey;
 }
 
