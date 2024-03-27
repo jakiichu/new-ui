@@ -13,4 +13,4 @@ const SnackbarComponentWarning = React.forwardRef(
     },
 );
 
-export {SnackbarComponentWarning}
+export default SnackbarComponentWarning

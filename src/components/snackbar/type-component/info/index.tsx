@@ -13,4 +13,4 @@ const SnackbarComponentInfo = React.forwardRef(
     },
 );
 
-export {SnackbarComponentInfo}
+export default SnackbarComponentInfo

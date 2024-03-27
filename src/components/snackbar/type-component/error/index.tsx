@@ -13,4 +13,4 @@ const SnackbarComponentError = React.forwardRef(
     },
 );
 
-export {SnackbarComponentError}
+export default SnackbarComponentError

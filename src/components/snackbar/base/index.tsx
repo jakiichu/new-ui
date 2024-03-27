@@ -31,4 +31,4 @@ const SnackbarComponentBase = React.forwardRef(
     },
 );
 
-export {SnackbarComponentBase}
+export default SnackbarComponentBase

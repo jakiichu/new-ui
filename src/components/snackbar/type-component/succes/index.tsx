@@ -13,4 +13,4 @@ const SnackbarComponentSuccess = React.forwardRef(
     },
 );
 
-export {SnackbarComponentSuccess}
+export default SnackbarComponentSuccess
