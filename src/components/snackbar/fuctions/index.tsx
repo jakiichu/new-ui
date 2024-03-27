@@ -1,4 +1,5 @@
 import {EVariantSnackbar} from "..";
+import React from "react";
 
 const handleVariantSnackbarIcon = (variantSnackbar: EVariantSnackbar) => {
     switch (variantSnackbar) {
