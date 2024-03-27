@@ -1,6 +1,5 @@
-import {forwardRef, LegacyRef} from "react";
-import { IInputComponentProps, EClassNameValues } from "../";
-import React from "react";
+import React, {forwardRef, LegacyRef} from "react";
+import {EClassNameValues, IInputComponentProps} from "../";
 
 const InputComponent = forwardRef(({
                                        label,
@@ -10,7 +9,7 @@ const InputComponent = forwardRef(({
     const id = props.id ?? crypto.randomUUID()
 
     return (
-        <div className='my-3 mx-2 relative'>
+        <div className='my-3 relative'>
             <label
                 className={`${error ?
                     EClassNameValues.LABEL_ERROR :

@@ -1,4 +1,5 @@
-import Navigation from './base'
+import NavigationComponent from './base'
 
-export {Navigation}
+export {NavigationComponent}
 export * from './interface'
+export * from './components'

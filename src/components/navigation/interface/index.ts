@@ -1,3 +1,5 @@
+import * as React from "react";
+import {NavLinkProps} from "react-router-dom";
 
 interface INavigateState {
     icon: string,
@@ -5,14 +7,37 @@ interface INavigateState {
     text: string
 }
 
-type INavForAll = INavigateState[]
+interface INavigateDropdown extends Omit<INavigateState, 'link'> {
+    dropdown: INavigateState[]
+}
+
+
+type INav = INavigateState | INavigateDropdown
+type INavForAll = INav[]
 
 interface INavigationProps {
+    NavLink: React.ForwardRefExoticComponent<NavLinkProps & React.RefAttributes<HTMLAnchorElement>>
+    isLoading?: boolean
     navForAll: INavForAll
 }
+
+interface INavigateBaseProps<T> {
+
+    el: T
+}
+
+interface INavigateItemProps extends INavigateBaseProps<Omit<INavigateState, 'link'>> {
+    isActive: boolean
+}
+
+type IDropdownItemProps = INavigateBaseProps<INavigateDropdown> & Pick<INavigationProps, "NavLink">
 
 export type {
     INavigateState,
     INavForAll,
-    INavigationProps
+    INavigateDropdown,
+    INav,
+    INavigationProps,
+    INavigateItemProps,
+    IDropdownItemProps
 }

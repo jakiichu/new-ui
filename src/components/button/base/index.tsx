@@ -1,7 +1,5 @@
-import React from "react";
-import {IButtonProps} from "../";
-import {EButtonVariant} from "../";
-import {FC, ReactNode, useEffect, useMemo} from "react";
+import React, {FC, ReactNode, useEffect, useMemo} from "react";
+import {EButtonVariant, IButtonProps} from "../";
 
 const ButtonComponent: FC<IButtonProps> = ({className, variant = EButtonVariant.fill, ...props}): ReactNode => {
     const handleVariantForDisabled = () => {
@@ -26,7 +24,7 @@ const ButtonComponent: FC<IButtonProps> = ({className, variant = EButtonVariant.
     }, [])
     return (
         <button
-            className={`mt-7 mx-2 py-2.5 px-6 rounded-xl font-semibold ${variantCalssName}
+            className={`${variant === EButtonVariant.noclass ? '' : 'py-2.5 px-6 rounded-xl font-semibold'} ${variantCalssName}
             ${className}`} {...props}>
 
         </button>
