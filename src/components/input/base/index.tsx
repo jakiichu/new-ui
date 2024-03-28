@@ -27,7 +27,7 @@ const InputComponent = forwardRef(({
                     ${EClassNameValues.INPUT_FOCUS} 
                     ${EClassNameValues.INPUT_ACTIVE}
                     ${EClassNameValues.INPUT_DISABLED}
-                    ${error ? EClassNameValues.INPUT_ERROR : ''} ${props.startIcon ? '!pl-8' : ''} ${props.icon ? '!pr-8' : ''} ${className ? className : ''}`}
+                    ${error ? EClassNameValues.INPUT_ERROR : ''} ${props.startIcon ? '!pl-10' : ''} ${props.icon ? '!pr-10' : ''} ${className ? className : ''}`}
                     ref={ref} id={id} {...props}/>
                 {
                     props.icon &&
