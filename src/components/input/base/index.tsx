@@ -18,7 +18,7 @@ const InputComponent = forwardRef(({
                 {label}
                 {
                     props.startIcon &&
-                    <div className={`absolute left-4 bottom-0  ${label ? 'top-10' : 'top-5'}`}>
+                    <div className={`absolute left-4 bottom-0  ${label ? 'top-10' : 'top-4'}`}>
                         {props.startIcon}
                     </div>
                 }
@@ -27,11 +27,11 @@ const InputComponent = forwardRef(({
                     ${EClassNameValues.INPUT_FOCUS} 
                     ${EClassNameValues.INPUT_ACTIVE}
                     ${EClassNameValues.INPUT_DISABLED}
-                    ${error ? EClassNameValues.INPUT_ERROR : ''} ${props.startIcon ? 'pl-4' : ''} ${props.icon ? 'pr-4' : ''} ${className ? className : ''}`}
+                    ${error ? EClassNameValues.INPUT_ERROR : ''} ${props.startIcon ? '!pl-8' : ''} ${props.icon ? '!pr-8' : ''} ${className ? className : ''}`}
                     ref={ref} id={id} {...props}/>
                 {
                     props.icon &&
-                    <div className={`absolute right-4 bottom-0 ${label ? 'top-10' : 'top-5'}`}>
+                    <div className={`absolute right-4 bottom-0 ${label ? 'top-10' : 'top-4'}`}>
                         {props.icon}
                     </div>
                 }
