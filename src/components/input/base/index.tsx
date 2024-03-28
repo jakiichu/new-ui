@@ -9,7 +9,7 @@ const InputComponent = forwardRef(({
                                        id = crypto.randomUUID(),
                                        ...props
                                    }: IInputComponentProps, ref: LegacyRef<HTMLInputElement>) => (
-        <div className='my-3 relative'>
+        <div className='mt-2 mb-1 relative'>
             <label
                 className={`${error ?
                     EClassNameValues.LABEL_ERROR :
