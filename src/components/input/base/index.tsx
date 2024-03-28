@@ -1,5 +1,6 @@
 import React, {forwardRef, LegacyRef} from "react";
 import {EClassNameValues, IInputComponentProps} from "../";
+import ErrorLabel from "../components/error-label";
 
 const InputComponent = forwardRef(({
                                        label,
@@ -14,7 +15,14 @@ const InputComponent = forwardRef(({
                 className={`${error ?
                     EClassNameValues.LABEL_ERROR :
                     `${EClassNameValues.LABEL_BASE} ${EClassNameValues.LABEL_FOCUS} ${EClassNameValues.LABEL_ACTIVE} ${EClassNameValues.LABEL_DISABLED}`}`}
-                htmlFor={id}>{label}
+                htmlFor={id}>
+                {label}
+                {
+                    props.startIcon &&
+                    <div className="absolute left-4 top-10 bottom-0">
+                        {props.startIcon}
+                    </div>
+                }
                 <input
                     className={`${EClassNameValues.INPUT_BASE}
                     ${EClassNameValues.INPUT_FOCUS} 
@@ -29,7 +37,7 @@ const InputComponent = forwardRef(({
                     </div>
                 }
             </label>
-            {error && <p className="absolute text-xs leading-6 text-[#E70000]">{error}</p>}
+            <ErrorLabel error={error}/>
         </div>
     );
 });
