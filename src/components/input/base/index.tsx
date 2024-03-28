@@ -5,11 +5,10 @@ import ErrorLabel from "../components/error-label";
 const InputComponent = forwardRef(({
                                        label,
                                        error,
+                                       className,
+                                       id = crypto.randomUUID(),
                                        ...props
-                                   }: IInputComponentProps, ref: LegacyRef<HTMLInputElement>) => {
-    const id = props.id ?? crypto.randomUUID()
-
-    return (
+                                   }: IInputComponentProps, ref: LegacyRef<HTMLInputElement>) => (
         <div className='my-3 relative'>
             <label
                 className={`${error ?
@@ -19,7 +18,7 @@ const InputComponent = forwardRef(({
                 {label}
                 {
                     props.startIcon &&
-                    <div className="absolute left-4 top-10 bottom-0">
+                    <div className={`absolute left-4 bottom-0  ${label ? 'top-10' : 'top-5'}`}>
                         {props.startIcon}
                     </div>
                 }
@@ -28,18 +27,18 @@ const InputComponent = forwardRef(({
                     ${EClassNameValues.INPUT_FOCUS} 
                     ${EClassNameValues.INPUT_ACTIVE}
                     ${EClassNameValues.INPUT_DISABLED}
-                    ${error ? EClassNameValues.INPUT_ERROR : ''}`}
+                    ${error ? EClassNameValues.INPUT_ERROR : ''} ${props.startIcon ? 'pl-4' : ''} ${props.icon ? 'pr-4' : ''} ${className ? className : ''}`}
                     ref={ref} id={id} {...props}/>
                 {
                     props.icon &&
-                    <div className="absolute right-4 top-10 bottom-0">
+                    <div className={`absolute right-4 bottom-0 ${label ? 'top-10' : 'top-5'}`}>
                         {props.icon}
                     </div>
                 }
             </label>
             <ErrorLabel error={error}/>
         </div>
-    );
-});
+    )
+);
 
 export default InputComponent;

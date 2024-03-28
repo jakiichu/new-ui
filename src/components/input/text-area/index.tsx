@@ -7,6 +7,7 @@ const TextAreaComponent =
                     label,
                     error,
                     id = crypto.randomUUID(),
+                    className,
                     ...props
                 }: ITextAreaComponentProps, ref: LegacyRef<HTMLTextAreaElement>): ReactElement => (
             <div className='my-3 relative'>
@@ -21,7 +22,7 @@ const TextAreaComponent =
                     ${EClassNameValues.INPUT_FOCUS} 
                     ${EClassNameValues.INPUT_ACTIVE}
                     ${EClassNameValues.INPUT_DISABLED}
-                    ${error ? EClassNameValues.INPUT_ERROR : ''}`}
+                    ${error ? EClassNameValues.INPUT_ERROR : ''} ${className ? className : ''}`}
                         ref={ref} id={id} {...props}/>
                 </label>
                 <ErrorLabel error={error}/>
