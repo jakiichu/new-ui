@@ -1,10 +1,10 @@
-import React from "react";
-import { IUseModalResult } from "../../../";
+import {ReactNode} from "react";
+import {IUseModalResult} from "../../../";
 
 interface IModalProps {
     modal: IUseModalResult,
-    children: React.ReactNode,
-    modalTitle: string
+    children: ReactNode,
+    modalTitle: ReactNode
 }
 
 export type {

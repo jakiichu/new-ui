@@ -22,7 +22,7 @@ const ModalComponent = ({modal, children, modalTitle}: IModalProps) => {
                 <div
                     className={"fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-10"}
                     id={"modal-wrapper"} onClick={() => modal.handleOnClose()()}>
-                    <div className={"bg-white px-[70px] py-[70px] rounded w-[760px]"}
+                    <div className={"bg-white p-[40px] rounded w-[760px]"}
                          onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}>
                         <div className={"flex justify-between"}>
                             <h2 className={"text-3xl"}>{modalTitle}</h2>
