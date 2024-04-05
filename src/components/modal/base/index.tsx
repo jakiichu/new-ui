@@ -3,7 +3,7 @@ import {IModalProps} from "../interface";
 import Icon from '@mdi/react';
 import {mdiClose} from '@mdi/js';
 
-const ModalComponent = ({modal, children, modalTitle}: IModalProps) => {
+const ModalComponent = ({modal, children, modalTitle, classname}: IModalProps) => {
 
     const handleEscape = (e: KeyboardEvent) => {
         e.key === "Escape" ? modal.handleOnClose()() : false;
@@ -22,7 +22,7 @@ const ModalComponent = ({modal, children, modalTitle}: IModalProps) => {
                 <div
                     className={"fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center z-10"}
                     id={"modal-wrapper"} onClick={() => modal.handleOnClose()()}>
-                    <div className={"bg-white p-[40px] rounded w-[760px]"}
+                    <div className={`bg-white p-[40px] rounded w-[760px] ${classname}`}
                          onClick={(e: React.MouseEvent<HTMLDivElement>) => e.stopPropagation()}>
                         <div className={"flex justify-between"}>
                             <h2 className={"text-3xl"}>{modalTitle}</h2>

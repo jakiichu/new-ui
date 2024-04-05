@@ -4,7 +4,8 @@ import {IUseModalResult} from "../../../";
 interface IModalProps {
     modal: IUseModalResult,
     children: ReactNode,
-    modalTitle: ReactNode
+    modalTitle: ReactNode,
+    classname?: string
 }
 
 export type {
