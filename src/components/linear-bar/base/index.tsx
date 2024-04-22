@@ -3,12 +3,12 @@ import React, {FC, ReactNode, useEffect, useState} from "react";
 import {ILinerBarProps} from "../";
 
 
-const LinerBar: FC<ILinerBarProps> = ({childrenMap, defaultValue}): ReactNode => {
+const LinerBar: FC<ILinerBarProps> = ({childrenMap, defaultValue, className}): ReactNode => {
     const [selectedRef, setSelectedRef] = useState(defaultValue ?? childrenMap[0]);
     useEffect(() => defaultValue && setSelectedRef(defaultValue), [defaultValue])
     return (
         <>
-            <div className="flex gap-[16px] items-center">
+            <div className={`flex gap-[16px] items-center ${className ? className : ''}`}>
                 {childrenMap?.map((ref) => (
                     <button
                         key={ref.title}
