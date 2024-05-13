@@ -4,7 +4,7 @@ import {Skeleton} from "../../";
 import {DropdownItem, NavbarItem} from "../";
 
 const NavigationComponent = ({navForAll, NavLink, isLoading = false}: INavigationProps): ReactElement => (
-    <nav className="pt-16 fixed top-0 px-5 w-[130px] h-[1080px] bg-stone-950">
+    <nav className="py-16 px-3 fixed top-0 w-[130px] h-[100vh] overflow-y-auto bg-stone-950">
         <ul className="flex flex-col items-center gap-7 text-white">
             {
                 isLoading ? navForAll.map((_, index) => (
