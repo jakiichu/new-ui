@@ -8,7 +8,10 @@ interface IBaseInputComponentProps<T> extends ClassAttributes<T>, React.InputHTM
     icon?: React.ReactNode
 }
 
-type IInputComponentProps = IBaseInputComponentProps<HTMLInputElement>
+interface IInputComponentProps extends IBaseInputComponentProps<HTMLInputElement> {
+    req?: boolean
+}
+
 type ITextAreaComponentProps = Omit<IBaseInputComponentProps<HTMLTextAreaElement>, 'startIcon' | 'icon'>
 
 export type {IInputComponentProps, ITextAreaComponentProps, IBaseInputComponentProps}

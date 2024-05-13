@@ -6,6 +6,7 @@ const InputComponent = forwardRef(({
                                        label,
                                        error,
                                        className,
+                                       req,
                                        id = crypto.randomUUID(),
                                        ...props
                                    }: IInputComponentProps, ref: LegacyRef<HTMLInputElement>) => (
@@ -16,6 +17,7 @@ const InputComponent = forwardRef(({
                     `${EClassNameValues.LABEL_BASE} ${EClassNameValues.LABEL_FOCUS} ${EClassNameValues.LABEL_ACTIVE} ${EClassNameValues.LABEL_DISABLED}`}`}
                 htmlFor={id}>
                 {label}
+                {req && <span className='font-light pl-2 text-red-600'>*</span>}
                 {
                     props.startIcon &&
                     <div className={`absolute left-4 bottom-0  ${label ? 'top-10' : 'top-4'}`}>
