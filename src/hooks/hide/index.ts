@@ -1,6 +1,6 @@
 import {useEffect, useState} from "react";
 
-export const useHideState = () => {
+const useHideState = () => {
     const [hide, setHide] = useState(() => window.innerWidth <= 768);
     const [prevWidth, setPrevWidth] = useState(window.innerWidth);
 
@@ -21,3 +21,5 @@ export const useHideState = () => {
 
     return {hide, setHide};
 }
+
+export default useHideState

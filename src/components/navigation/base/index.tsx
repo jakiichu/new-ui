@@ -2,9 +2,9 @@ import {INavigateDropdown, INavigateState, INavigationProps} from "../interface"
 import React, {ReactElement} from "react";
 import {Skeleton} from "../../";
 import {DropdownItem, NavbarItem} from "../";
-import {useHideState} from "../../../hooks/hide";
 import {mdiChevronLeft, mdiChevronRight} from "@mdi/js";
 import Icon from "@mdi/react";
+import useHideState from "../../../hooks/hide";
 
 const NavigationComponent = ({navForAll, NavLink, isLoading = false}: INavigationProps): ReactElement => {
     const {hide, setHide} = useHideState()
