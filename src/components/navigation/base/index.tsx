@@ -11,7 +11,7 @@ const NavigationComponent = ({navForAll, NavLink, isLoading = false}: INavigatio
 
     return (
         <nav className="fixed h-[100vh] z-10">
-            <div className="bg-stone-950 h-full relative md:overflow-y-auto">
+            <div className="bg-stone-950 h-full relative tablet-min:overflow-y-auto">
                 <div hidden={hide} className="py-16 px-6">
                     <ul className="flex flex-col items-center gap-7 text-white">
                         {
@@ -28,12 +28,18 @@ const NavigationComponent = ({navForAll, NavLink, isLoading = false}: INavigatio
                                 navForAll.map((el: INavigateState, index) => (
                                         el.link !== undefined ?
                                             <li key={`List-${index}`}>
+                                                {
+                                                    el.link.match('(http|ftp|https):\\/\\/([\\w_-]+(?:(?:\\.[\\w_-]+)+))([\\w.,@?^=%&:\\/~+#-]*[\\w@?^=%&\\/~+#-])') ?
+                                                        <a href={el.link}> <NavbarItem el={el} isActive={false}/></a>
+                                                        :
+                                                        <NavLink to={el.link}>
+                                                            {({isActive}) => (
+                                                                <NavbarItem el={el} isActive={isActive}/>
+                                                            )}
+                                                        </NavLink>
+                                                }
 
-                                                <NavLink to={el.link}>
-                                                    {({isActive}) => (
-                                                        <NavbarItem el={el} isActive={isActive}/>
-                                                    )}
-                                                </NavLink>
+
                                             </li>
 
                                             :
